@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الوارث للحلول البرمجية | AL WARITH Software Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0B2D5B',
+                            electric: '#0E7BFF',
+                            sky: '#3BA3FF',
+                            slate: '#6B7280',
+                            soft: '#F5F7FA',
+                            darkBg: '#061933',
+                            cardDark: '#0e2445'
+                        }
+                    },
+                    fontFamily: {
+                        arabic: ['Tajawal', 'Cairo', 'sans-serif'],
+                        english: ['Montserrat', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Tajawal', 'Cairo', 'Inter', sans-serif;
+            background-color: #F5F7FA;
+            color: #0B2D5B;
+        }
+        .en-font {
+            font-family: 'Montserrat', 'Inter', sans-serif;
+        }
+        /* Custom Pixel Pattern Grid Background */
+        .pixel-grid-bg {
+            background-image: radial-gradient(#0E7BFF 1px, transparent 1px), radial-gradient(#0B2D5B 1px, #F5F7FA 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            background-opacity: 0.05;
+        }
+        .pixel-pattern {
+            background-image: linear-gradient(to right, rgba(14, 123, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(14, 123, 255, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        /* Gradient Overlays */
+        .hero-gradient {
+            background: linear-gradient(135deg, #0B2D5B 0%, #061933 60%, #082247 100%);
+        }
+        .accent-gradient {
+            background: linear-gradient(135deg, #0E7BFF 0%, #3BA3FF 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(14, 123, 255, 0.1);
+        }
+        .dark .glass-card {
+            background: rgba(14, 36, 69, 0.85);
+            border: 1px solid rgba(59, 163, 255, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-brand-soft text-brand-navy antialiased transition-colors duration-300">
+
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-brand-darkBg/90 backdrop-blur-md border-b border-gray-200/80 dark:border-gray-800 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo Display (Brand Book Horizontal Layout) -->
+                <a href="#hero" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 flex items-center justify-center">
+                        <!-- AW Vector Logo Badge -->
+                        <svg viewBox="0 0 200 160" class="w-full h-full drop-shadow-sm transition-transform group-hover:scale-105">
+                            <!-- Digital Pixel Grid Left -->
+                            <rect x="10" y="65" width="16" height="16" rx="3" fill="#0E7BFF"/>
+                            <rect x="30" y="45" width="18" height="18" rx="3" fill="#0E7BFF"/>
+                            <rect x="30" y="67" width="22" height="22" rx="4" fill="#0E7BFF"/>
+                            <rect x="10" y="90" width="16" height="16" rx="3" fill="#0E7BFF"/>
+                            <!-- AW Interlocking Geometry -->
+                            <path d="M 60 110 L 100 35 L 122 75 L 105 105 Z" fill="#0B2D5B"/>
+                            <path d="M 100 35 L 140 110 L 120 110 L 100 70 Z" fill="#0E7BFF"/>
+                            <path d="M 115 65 L 150 120 L 180 35 L 158 35 L 140 85 Z" fill="#3BA3FF"/>
+                            <path d="M 75 110 L 100 65 L 115 90 L 100 110 Z" fill="#0E7BFF" opacity="0.9"/>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-extrabold tracking-tight text-brand-navy dark:text-white font-english flex items-center gap-1">
+                            AL WARITH
+                        </span>
+                        <span class="text-xs font-semibold text-brand-electric tracking-wide font-arabic">
+                            الوارث للحلول البرمجية
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-brand-electric transition-colors" data-i18n="nav_about">من نحن</a>
+                    <a href="#services" class="text-gray-700 dark:text-gray-300 hover:text-brand-electric transition-colors" data-i18n="nav_services">الخدمات والحلول</a>
+                    <a href="#products" class="text-gray-700 dark:text-gray-300 hover:text-brand-electric transition-colors" data-i18n="nav_products">الأنظمة والمنتجات</a>
+                    <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-brand-electric transition-colors" data-i18n="nav_projects">المشاريع</a>
+                    <a href="#calculator" class="text-gray-700 dark:text-gray-300 hover:text-brand-electric transition-colors" data-i18n="nav_calc">حاسبة المشروع</a>
+                    <a href="#support" class="text-gray-700 dark:text-gray-300 hover:text-brand-electric transition-colors" data-i18n="nav_support">الدعم الفني</a>
+                </nav>
+
+                <!-- Actions Header Side -->
+                <div class="flex items-center gap-3">
+                    <!-- Language Switcher -->
+                    <button id="langToggle" onclick="toggleLanguage()" class="px-3 py-1.5 rounded-lg border border-gray-300 dark:border-gray-700 text-xs font-bold text-brand-navy dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition flex items-center gap-1.5">
+                        <i data-lucide="globe" class="w-4 h-4"></i>
+                        <span id="langLabel">English</span>
+                    </button>
+
+                    <!-- CTA Button -->
+                    <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg bg-brand-electric text-white text-sm font-semibold hover:bg-blue-600 shadow-md shadow-blue-500/20 transition-all hover:-translate-y-0.5" data-i18n="nav_cta">
+                        تواصل معنا
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobileMenu" class="hidden md:hidden border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-brand-darkBg px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800" data-i18n="nav_about">من نحن</a>
+            <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800" data-i18n="nav_services">الخدمات والحلول</a>
+            <a href="#products" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800" data-i18n="nav_products">الأنظمة والمنتجات</a>
+            <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800" data-i18n="nav_projects">المشاريع</a>
+            <a href="#calculator" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800" data-i18n="nav_calc">حاسبة المشروع</a>
+            <a href="#support" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800" data-i18n="nav_support">الدعم الفني</a>
+            <a href="#contact" class="block w-full text-center px-4 py-2.5 rounded-lg bg-brand-electric text-white font-semibold" data-i18n="nav_cta">تواصل معنا</a>
+        </div>
+    </header>
+
+    <section id="hero" class="relative hero-gradient text-white overflow-hidden py-20 lg:py-28 pixel-pattern">
+        <!-- Floating Digital Pixel Decorative Elements -->
+        <div class="absolute top-12 left-10 w-16 h-16 bg-brand-electric/20 rounded-lg blur-xl animate-pulse"></div>
+        <div class="absolute bottom-10 right-10 w-24 h-24 bg-brand-sky/20 rounded-lg blur-2xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Hero Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-start">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md text-xs sm:text-sm text-brand-sky font-medium">
+                        <span class="w-2 h-2 rounded-full bg-brand-electric animate-ping"></span>
+                        <span data-i18n="hero_badge">الشريك التقني الأول للتحول الرقمي بالسودان</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        <span class="block text-white" data-i18n="hero_title_1">تقنية تبني المستقبل ..</span>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-sky to-blue-400" data-i18n="hero_title_2">حلول برمجية ذكية لتنمية أعمالك</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-gray-300 max-w-2xl leading-relaxed" data-i18n="hero_desc">
+                        نطور أنظمة وبرمجيات عالية الجودة مخصصة للمؤسسات والشركات. نساعدك على تبسيط العمليات المعقدة والتحول الرقمي بكفاءة عالية وبدعم فني مستمر.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-brand-electric hover:bg-blue-600 text-white font-bold text-center shadow-lg shadow-blue-500/30 transition-all hover:scale-105 flex items-center justify-center gap-2">
+                            <span data-i18n="hero_btn_primary">ابدأ مشروعك الرقمي</span>
+                            <i data-lucide="arrow-left" class="w-5 h-5 rtl-icon"></i>
+                        </a>
+                        <a href="#products" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-center backdrop-blur-md transition-all flex items-center justify-center gap-2">
+                            <span data-i18n="hero_btn_secondary">استكشف أنظمتنا</span>
+                            <i data-lucide="layers" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+
+                    <!-- Trust Metrics -->
+                    <div class="pt-8 border-t border-white/10 grid grid-cols-3 gap-4 text-center lg:text-start">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-brand-sky font-english">+100%</div>
+                            <div class="text-xs text-gray-300" data-i18n="metric_1">اعتمادية الأنظمة</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-brand-sky font-english">24/7</div>
+                            <div class="text-xs text-gray-300" data-i18n="metric_2">دعم فني مستمر</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-brand-sky font-english">100%</div>
+                            <div class="text-xs text-gray-300" data-i18n="metric_3">كفاءات سودانية</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Graphic Representation -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Graphic Dashboard Preview Frame -->
+                        <div class="rounded-2xl bg-brand-navy/80 border border-white/20 p-4 shadow-2xl backdrop-blur-xl relative z-10 overflow-hidden">
+                            <!-- Window Bar -->
+                            <div class="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
+                                <div class="flex gap-1.5">
+                                    <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                                </div>
+                                <span class="text-xs font-mono text-gray-400">AL WARITH ERP v2.4</span>
+                            </div>
+
+                            <!-- Abstract UI Mockup Elements -->
+                            <div class="space-y-3">
+                                <div class="h-20 rounded-xl bg-gradient-to-r from-brand-electric/30 to-brand-sky/20 p-3 border border-white/10 flex items-center justify-between">
+                                    <div class="space-y-1">
+                                        <div class="h-3 w-28 bg-white/40 rounded"></div>
+                                        <div class="h-5 w-36 bg-brand-sky rounded font-bold"></div>
+                                    </div>
+                                    <div class="w-10 h-10 rounded-lg bg-brand-electric flex items-center justify-center">
+                                        <i data-lucide="trending-up" class="w-6 h-6 text-white"></i>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div class="p-3 rounded-xl bg-white/5 border border-white/10 space-y-2">
+                                        <div class="h-2 w-16 bg-white/30 rounded"></div>
+                                        <div class="h-4 w-20 bg-white/70 rounded"></div>
+                                    </div>
+                                    <div class="p-3 rounded-xl bg-white/5 border border-white/10 space-y-2">
+                                        <div class="h-2 w-16 bg-white/30 rounded"></div>
+                                        <div class="h-4 w-20 bg-white/70 rounded"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Digital Pixel Blocks Showcase -->
+                                <div class="p-3 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between">
+                                    <div class="flex items-center gap-2">
+                                        <div class="grid grid-cols-2 gap-1 w-6 h-6">
+                                            <div class="bg-brand-sky rounded-sm"></div>
+                                            <div class="bg-brand-electric rounded-sm"></div>
+                                            <div class="bg-brand-electric rounded-sm"></div>
+                                            <div class="bg-brand-sky rounded-sm"></div>
+                                        </div>
+                                        <span class="text-xs text-gray-300">نظام إدارة المخزون المالي</span>
+                                    </div>
+                                    <span class="text-xs text-green-400 font-bold">متصل</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Secondary Floating Card -->
+                        <div class="absolute -bottom-6 -left-6 bg-white text-brand-navy p-4 rounded-xl shadow-2xl border border-gray-100 flex items-center gap-3 z-20 hidden sm:flex">
+                            <div class="w-10 h-10 rounded-lg bg-blue-50 text-brand-electric flex items-center justify-center">
+                                <i data-lucide="shield-check" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-bold" data-i18n="badge_secure">نظام محمي ومتوافق</div>
+                                <div class="text-[10px] text-gray-500" data-i18n="badge_secure_sub">معايير أمان عالية الجودة</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-electric font-bold text-sm tracking-widest uppercase" data-i18n="about_subtitle">التعريف بالعلامة التجارية</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-2" data-i18n="about_title">الوارث للحلول البرمجية</h2>
+                <div class="w-16 h-1 bg-brand-electric mx-auto mt-4 rounded-full"></div>
+                <p class="text-gray-600 mt-4 leading-relaxed" data-i18n="about_p">
+                    شريك تقني محلي يقدم حلولاً برمجية عملية ومرنة تراعي احتياجات السوق السوداني، وتجمع بين الجودة، سهولة الاستخدام، والدعم المستمر لتنظيم الأعمال ونموها.
+                </p>
+            </div>
+
+            <!-- Vision and Mission Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <!-- Vision Card -->
+                <div class="p-8 rounded-2xl bg-brand-soft border border-gray-200/80 hover:border-brand-sky/50 transition-all hover:shadow-xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-2 h-full bg-brand-electric"></div>
+                    <div class="w-14 h-14 rounded-xl bg-blue-100 text-brand-electric flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="eye" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-navy mb-3" data-i18n="vision_title">الرؤية | Vision</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="vision_desc">
+                        أن نكون الشريك التقني الأول والرواد في تمكين التحول الرقمي وبناء الأنظمة البرمجية الذكية في السودان والمحيط الإقليمي، من خلال تقديم حلول متطورة ترتقي بمستوى الأعمال وتصنع مستقبلاً رقمياً مستداماً.
+                    </p>
+                </div>
+
+                <!-- Mission Card -->
+                <div class="p-8 rounded-2xl bg-brand-soft border border-gray-200/80 hover:border-brand-sky/50 transition-all hover:shadow-xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-2 h-full bg-brand-sky"></div>
+                    <div class="w-14 h-14 rounded-xl bg-blue-100 text-brand-electric flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="target" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-navy mb-3" data-i18n="mission_title">الرسالة | Mission</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="mission_desc">
+                        تقديم أنظمة وبرمجيات عالية الجودة، مخصصة ومبتكرة، تلبي تطلعات المؤسسات والشركات. نسعى لتبسيط العمليات المعقدة بأسعار تنافسية ودعم فني مستمر بالاعتماد على الكفاءات السودانية وأحدث التقنيات.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Core Values Grid -->
+            <div>
+                <h3 class="text-xl font-bold text-brand-navy text-center mb-8" data-i18n="values_title">القيم الأساسية | Core Values</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                    
+                    <div class="p-5 rounded-xl bg-white border border-gray-100 text-center shadow-sm hover:shadow-md transition">
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-brand-electric mx-auto flex items-center justify-center mb-3">
+                            <i data-lucide="lightbulb" class="w-5 h-5"></i>
+                        </div>
+                        <h4 class="font-bold text-brand-navy text-sm" data-i18n="val_1_t">الابتكار</h4>
+                        <p class="text-xs text-gray-500 mt-1" data-i18n="val_1_d">حلول معالجة واقعية</p>
+                    </div>
+
+                    <div class="p-5 rounded-xl bg-white border border-gray-100 text-center shadow-sm hover:shadow-md transition">
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-brand-electric mx-auto flex items-center justify-center mb-3">
+                            <i data-lucide="award" class="w-5 h-5"></i>
+                        </div>
+                        <h4 class="font-bold text-brand-navy text-sm" data-i18n="val_2_t">الجودة</h4>
+                        <p class="text-xs text-gray-500 mt-1" data-i18n="val_2_d">اعتمادية وأداء عالٍ</p>
+                    </div>
+
+                    <div class="p-5 rounded-xl bg-white border border-gray-100 text-center shadow-sm hover:shadow-md transition">
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-brand-electric mx-auto flex items-center justify-center mb-3">
+                            <i data-lucide="users" class="w-5 h-5"></i>
+                        </div>
+                        <h4 class="font-bold text-brand-navy text-sm" data-i18n="val_3_t">الشراكة</h4>
+                        <p class="text-xs text-gray-500 mt-1" data-i18n="val_3_d">علاقات طويلة الأمد</p>
+                    </div>
+
+                    <div class="p-5 rounded-xl bg-white border border-gray-100 text-center shadow-sm hover:shadow-md transition">
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-brand-electric mx-auto flex items-center justify-center mb-3">
+                            <i data-lucide="zap" class="w-5 h-5"></i>
+                        </div>
+                        <h4 class="font-bold text-brand-navy text-sm" data-i18n="val_4_t">التمكين</h4>
+                        <p class="text-xs text-gray-500 mt-1" data-i18n="val_4_d">تحسين الكفاءة التقنية</p>
+                    </div>
+
+                    <div class="p-5 rounded-xl bg-white border border-gray-100 text-center shadow-sm hover:shadow-md transition">
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-brand-electric mx-auto flex items-center justify-center mb-3">
+                            <i data-lucide="sliders" class="w-5 h-5"></i>
+                        </div>
+                        <h4 class="font-bold text-brand-navy text-sm" data-i18n="val_5_t">المرونة</h4>
+                        <p class="text-xs text-gray-500 mt-1" data-i18n="val_5_d">مراعاة الظروف التشغيلية</p>
+                    </div>
+
+                    <div class="p-5 rounded-xl bg-white border border-gray-100 text-center shadow-sm hover:shadow-md transition">
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-brand-electric mx-auto flex items-center justify-center mb-3">
+                            <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+                        </div>
+                        <h4 class="font-bold text-brand-navy text-sm" data-i18n="val_6_t">الاستمرارية</h4>
+                        <p class="text-xs text-gray-500 mt-1" data-i18n="val_6_d">تحديث ودعم دائم</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-brand-soft border-t border-b border-gray-200/60 pixel-grid-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-electric font-bold text-sm uppercase tracking-wider" data-i18n="services_subtitle">خدماتنا البرمجية</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-2" data-i18n="services_title">حلول متكاملة تناسب طموح مؤسستك</h2>
+                <div class="w-16 h-1 bg-brand-electric mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-navy text-white flex items-center justify-center mb-6 group-hover:bg-brand-electric transition-colors">
+                            <i data-lucide="layout-grid" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-3" data-i18n="s1_title">تطوير الأنظمة الإدارية و ERP</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6" data-i18n="s1_desc">
+                            أنظمة متخصصة لإدارة الموارد، المالية، والمخازن والموارد البشرية مصممة لتبسيط الدورة التشغيلية للمؤسسات.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 text-xs font-medium text-gray-500 border-t pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-electric"></i> إدارة المخزون والمشتريات</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-electric"></i> المحاسبة والتقارير المالية</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-navy text-white flex items-center justify-center mb-6 group-hover:bg-brand-electric transition-colors">
+                            <i data-lucide="smartphone" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-3" data-i18n="s2_title">تطبيقات الهواتف والويب</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6" data-i18n="s2_desc">
+                            بناء تطبيقات ذكية وسلسة تعمل على أجهزة Android و iOS والمقترنة بمتصفحات الويب بأعلى أداء.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 text-xs font-medium text-gray-500 border-t pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-electric"></i> واجهات مستخدم RTL احترافية</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-electric"></i> تجربة استخدام سريعة وموثوقة</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-navy text-white flex items-center justify-center mb-6 group-hover:bg-brand-electric transition-colors">
+                            <i data-lucide="database" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-3" data-i18n="s3_title">الربط والتكامل البرمجي API</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6" data-i18n="s3_desc">
+                            ربط الأنظمة المتباينة وبوابات الدفع الإلكترونية المحلية والإقليمية بسلاسة لضمان تدفق البيانات.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 text-xs font-medium text-gray-500 border-t pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-electric"></i> تكامل بوابات الدفع</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-electric"></i> حماية وتشفير البيانات</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-navy text-white flex items-center justify-center mb-6 group-hover:bg-brand-electric transition-colors">
+                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-3" data-i18n="s4_title">التحول الرقمي والأتمتة</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6" data-i18n="s4_desc">
+                            تحويل المعاملات الورقية والإجراءات اليدوية إلى سير عمل برمجي مؤتمت بالكامل يختصر الوقت.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 text-xs font-medium text-gray-500 border-t pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-electric"></i> تقليل الأخطاء البشرية</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-electric"></i> تسريع إنجاز المعاملات</li>
+                    </ul>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-navy text-white flex items-center justify-center mb-6 group-hover:bg-brand-electric transition-colors">
+                            <i data-lucide="headphones" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-3" data-i18n="s5_title">الدعم الفني والصيانة المستمرة</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6" data-i18n="s5_desc">
+                            التزام تام بتقديم خدمات صيانة دورية، تحديثات أمنية، ودعم مباشر لضمان استمرارية عمل أنظمتك دون انقطاع.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 text-xs font-medium text-gray-500 border-t pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-electric"></i> اتفاقيات مستوى الخدمة SLA</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-electric"></i> نسَخ احتياطية وتحديثات دورية</li>
+                    </ul>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-navy text-white flex items-center justify-center mb-6 group-hover:bg-brand-electric transition-colors">
+                            <i data-lucide="code" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-3" data-i18n="s6_title">برمجيات خاصة بحسب الطلب</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6" data-i18n="s6_desc">
+                            تطوير حلول برمجية مخصصة بالكامل تبدأ من تحليل متطلبات عملك حتى التسليم النهائي والتدريب.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 text-xs font-medium text-gray-500 border-t pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-electric"></i> تحليل متطلبات دقيق</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-electric"></i> مرونة قابلة للتوسع</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="products" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-electric font-bold text-sm uppercase tracking-wider" data-i18n="prod_subtitle">المنتجات الجاهزة</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-2" data-i18n="prod_title">أنظمة برمجية ذكية وجاهزة للاستخدام</h2>
+                <div class="w-16 h-1 bg-brand-electric mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <div class="flex justify-center gap-2 mb-12 overflow-x-auto pb-2">
+                <button onclick="switchTab('erp')" id="tab-erp" class="tab-btn active px-6 py-2.5 rounded-xl text-sm font-bold bg-brand-navy text-white transition-all shadow-md">
+                    نظام ERP الشامل
+                </button>
+                <button onclick="switchTab('pos')" id="tab-pos" class="tab-btn px-6 py-2.5 rounded-xl text-sm font-bold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all">
+                    نظام نقاط البيع (POS)
+                </button>
+                <button onclick="switchTab('hr')" id="tab-hr" class="tab-btn px-6 py-2.5 rounded-xl text-sm font-bold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all">
+                    نظام الموارد البشرية (HR)
+                </button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div id="content-erp" class="tab-content block">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-brand-soft p-8 sm:p-12 rounded-3xl border border-gray-200/80">
+                    <div class="space-y-6">
+                        <span class="px-3 py-1 rounded-full bg-blue-100 text-brand-electric text-xs font-bold">AL WARITH Enterprise</span>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-brand-navy">نظام إدارة المؤسسات والشركات المالي والمخزني</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm">
+                            منظومة متكاملة تربط المبيعات، الحسابات، المخازن، والمشتريات في لوحة قيادة واحدة، تدعم العملات المتعددة والتقارير المالية الدقيقة المصممة خصيصاً لبيئة الأعمال السودانية.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 text-sm font-semibold text-brand-navy">
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-brand-electric"></i> القيود المحاسبية الآلية</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-brand-electric"></i> التنبيه بحدود المخزون</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-brand-electric"></i> إدارة الموردين والعملاء</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-brand-electric"></i> تصدير تقارير Excel/PDF</div>
+                        </div>
+                        <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-electric text-white font-bold text-sm hover:bg-blue-600 transition shadow-lg shadow-blue-500/20">
+                            طلب عرض توضيحي (Demo)
+                            <i data-lucide="chevron-left" class="w-4 h-4 rtl-icon"></i>
+                        </a>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-md">
+                        <!-- Mockup Preview Graphic -->
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b pb-3">
+                                <span class="font-bold text-xs text-gray-500">ملخص الحركة المالية الشهرية</span>
+                                <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold">+18.5%</span>
+                            </div>
+                            <div class="h-40 bg-gradient-to-t from-blue-50 to-white rounded-lg flex items-end p-4 gap-3">
+                                <div class="w-1/6 bg-brand-sky h-1/2 rounded-t"></div>
+                                <div class="w-1/6 bg-brand-electric h-3/4 rounded-t"></div>
+                                <div class="w-1/6 bg-brand-navy h-2/3 rounded-t"></div>
+                                <div class="w-1/6 bg-brand-sky h-4/5 rounded-t"></div>
+                                <div class="w-1/6 bg-brand-electric h-full rounded-t"></div>
+                                <div class="w-1/6 bg-brand-navy h-3/5 rounded-t"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-500 font-mono">
+                                <span>يناير</span><span>فبراير</span><span>مارس</span><span>أبريل</span><span>مايو</span><span>يونيو</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-pos" class="tab-content hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-brand-soft p-8 sm:p-12 rounded-3xl border border-gray-200/80">
+                    <div class="space-y-6">
+                        <span class="px-3 py-1 rounded-full bg-blue-100 text-brand-electric text-xs font-bold">AL WARITH POS</span>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-brand-navy">نظام نقاط البيع وإدارة المبيعات</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm">
+                            حل سريع ومرن للمحلات التجارية، السوبرماركت، والمطاعم، يعمل بكفاءة مع أو بدون اتصال دائم بالإنترنت مع دعم طابعات الفواتير الباربود.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 text-sm font-semibold text-brand-navy">
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-brand-electric"></i> طباعة الفواتير السريعة</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-brand-electric"></i> دعم الأجهزة الكفية</div>
+                        </div>
+                        <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-electric text-white font-bold text-sm hover:bg-blue-600 transition">
+                            طلب تجربة النظام
+                        </a>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-md">
+                        <div class="p-4 bg-gray-50 rounded-xl border border-dashed border-gray-300 text-center text-sm font-bold text-gray-600">
+                            واجهة كاشير سريعة تدعم قارئ الباركود واللمس
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-hr" class="tab-content hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-brand-soft p-8 sm:p-12 rounded-3xl border border-gray-200/80">
+                    <div class="space-y-6">
+                        <span class="px-3 py-1 rounded-full bg-blue-100 text-brand-electric text-xs font-bold">AL WARITH HR</span>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-brand-navy">نظام إدارة الموارد البشرية والمرتبات</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm">
+                            إدارة الحضور والانصراف، حساب الأجور، الحوافز والخصومات، والإجازات وفقاً لقوانين العمل المحلية.
+                        </p>
+                        <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-electric text-white font-bold text-sm hover:bg-blue-600 transition">
+                            استفسر عن النظام
+                        </a>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-md">
+                        <div class="p-4 bg-gray-50 rounded-xl border border-dashed border-gray-300 text-center text-sm font-bold text-gray-600">
+                            سجلات الموظفين وكشوفات المرتبات الآلية
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="calculator" class="py-20 bg-brand-navy text-white relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center mb-12">
+                <span class="text-brand-sky font-bold text-sm uppercase tracking-wider" data-i18n="calc_subtitle">أداة تفاعلية</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-2" data-i18n="calc_title">حاسبة تقدير تكلفة المشروع البرمجي</h2>
+                <p class="text-gray-300 mt-2 text-sm" data-i18n="calc_desc">احصل على تقدير مبدئي لمشروعك خلال ثوانٍ معدودة بناءً على متطلباتك</p>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-xl p-6 sm:p-10 rounded-3xl border border-white/15 shadow-2xl">
+                
+                <form id="calcForm" class="space-y-8" oninput="calculateEstimate()">
+                    
+                    <!-- Step 1: Project Type -->
+                    <div>
+                        <label class="block text-sm font-bold mb-3 text-brand-sky" data-i18n="calc_type_label">1. نوع المشروع المطلوب:</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <label class="p-4 rounded-xl border border-white/20 bg-white/5 cursor-pointer hover:bg-white/10 flex items-center gap-3">
+                                <input type="radio" name="project_type" value="web" checked class="accent-brand-electric">
+                                <span class="text-sm font-medium">موقع / منصة ويب</span>
+                            </label>
+                            <label class="p-4 rounded-xl border border-white/20 bg-white/5 cursor-pointer hover:bg-white/10 flex items-center gap-3">
+                                <input type="radio" name="project_type" value="mobile" class="accent-brand-electric">
+                                <span class="text-sm font-medium">تطبيق هواتف ذكية</span>
+                            </label>
+                            <label class="p-4 rounded-xl border border-white/20 bg-white/5 cursor-pointer hover:bg-white/10 flex items-center gap-3">
+                                <input type="radio" name="project_type" value="erp" class="accent-brand-electric">
+                                <span class="text-sm font-medium">نظام إداري ERP</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Features Requirements -->
+                    <div>
+                        <label class="block text-sm font-bold mb-3 text-brand-sky" data-i18n="calc_features_label">2. الميزات والخدمات المضافة:</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <label class="p-3.5 rounded-xl border border-white/20 bg-white/5 cursor-pointer hover:bg-white/10 flex items-center gap-3">
+                                <input type="checkbox" id="feat_payment" class="accent-brand-electric">
+                                <span class="text-xs sm:text-sm">ربط بوابات الدفع الإلكتروني</span>
+                            </label>
+                            <label class="p-3.5 rounded-xl border border-white/20 bg-white/5 cursor-pointer hover:bg-white/10 flex items-center gap-3">
+                                <input type="checkbox" id="feat_multilang" class="accent-brand-electric">
+                                <span class="text-xs sm:text-sm">دعم اللغات المتعددة (AR/EN)</span>
+                            </label>
+                            <label class="p-3.5 rounded-xl border border-white/20 bg-white/5 cursor-pointer hover:bg-white/10 flex items-center gap-3">
+                                <input type="checkbox" id="feat_dashboard" class="accent-brand-electric">
+                                <span class="text-xs sm:text-sm">لوحة تحكم إدارية متقدمة</span>
+                            </label>
+                            <label class="p-3.5 rounded-xl border border-white/20 bg-white/5 cursor-pointer hover:bg-white/10 flex items-center gap-3">
+                                <input type="checkbox" id="feat_support" class="accent-brand-electric">
+                                <span class="text-xs sm:text-sm">خطة دعم فني وصيانة سنوية</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Estimation Result Display Box -->
+                    <div class="p-6 rounded-2xl bg-brand-electric/20 border border-brand-sky/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div>
+                            <div class="text-xs text-gray-300" data-i18n="calc_result_label">التقدير المبدئي للتكلفة والمدة:</div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-brand-sky mt-1 font-english">
+                                $<span id="estPrice">800</span> - $<span id="estPriceMax">1200</span>
+                            </div>
+                            <div class="text-xs text-gray-300 mt-1">المدة المقدرة: <span id="estTime">2 - 3</span> أسابيع</div>
+                        </div>
+                        <a href="#contact" onclick="fillProjectDetails()" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-brand-electric hover:bg-blue-600 font-bold text-sm text-center transition shadow-md">
+                            اعتماد واستشارة مجانية
+                        </a>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="support" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-electric font-bold text-sm uppercase tracking-wider" data-i18n="supp_subtitle">خدمة العملاء</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-2" data-i18n="supp_title">مركز الدعم الفني والصيانة</h2>
+                <div class="w-16 h-1 bg-brand-electric mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Ticket Box Form -->
+                <div class="lg:col-span-2 bg-brand-soft p-8 rounded-3xl border border-gray-200">
+                    <h3 class="text-xl font-bold text-brand-navy mb-4 flex items-center gap-2">
+                        <i data-lucide="ticket" class="w-5 h-5 text-brand-electric"></i>
+                        <span data-i18n="ticket_form_title">فتح تذكرة دعم فني جديدة</span>
+                    </h3>
+                    <form id="ticketForm" onsubmit="submitTicket(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 mb-1" data-i18n="ticket_name">الاسم / اسم المؤسسة</label>
+                                <input type="text" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-electric outline-none text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 mb-1" data-i18n="ticket_system">النظام أو الخدمة</label>
+                                <select class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-electric outline-none text-sm">
+                                    <option>نظام ERP</option>
+                                    <option>نقاط البيع POS</option>
+                                    <option>تطبيق هاتف</option>
+                                    <option>استفسار عام</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1" data-i18n="ticket_desc">وصف المشكلة أو الطلب</label>
+                            <textarea rows="4" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-electric outline-none text-sm" placeholder="أدخل تفاصيل الطلب بكافية..."></textarea>
+                        </div>
+                        <button type="submit" class="px-6 py-3 rounded-xl bg-brand-navy hover:bg-brand-electric text-white font-bold text-sm transition flex items-center gap-2">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                            <span data-i18n="ticket_btn">إرسال التذكرة</span>
+                        </button>
+                    </form>
+                    <div id="ticketAlert" class="hidden mt-4 p-4 rounded-xl bg-green-100 text-green-800 text-sm font-bold">
+                        تم تقديم تذكرتك بنجاح! سيرد عليك فريق الدعم الفني خلال أقل من ساعة.
+                    </div>
+                </div>
+
+                <!-- Support SLA Info Card -->
+                <div class="bg-brand-navy text-white p-8 rounded-3xl space-y-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4" data-i18n="sla_title">التزامنا بالدعم المستمر</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed" data-i18n="sla_desc">
+                            نضمن لشركائنا استجابة سريعة واستقرار تام للأنظمة وفق اتفاقيات مستوى الخدمة SLA المعتمدة مع مراعاة ظروف العمل.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                            <i data-lucide="clock" class="w-6 h-6 text-brand-sky"></i>
+                            <div>
+                                <div class="text-xs font-bold">زمن الاستجابة</div>
+                                <div class="text-[10px] text-gray-300">أقل من 60 دقيقة للذكرات الطارئة</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                            <i data-lucide="shield" class="w-6 h-6 text-brand-sky"></i>
+                            <div>
+                                <div class="text-xs font-bold">تحديثات أمنية</div>
+                                <div class="text-[10px] text-gray-300">صيانة دورية لحماية البيانات</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center pt-4 border-t border-white/10 text-xs text-gray-400">
+                        الوارث للحلول البرمجية - شريكك المستمر
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-brand-soft border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div>
+                        <span class="text-brand-electric font-bold text-sm uppercase" data-i18n="contact_sub">تواصل معنا</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-1" data-i18n="contact_title">يسعدنا مناقشة مشروعك القادم</h2>
+                        <p class="text-gray-600 mt-3 text-sm leading-relaxed" data-i18n="contact_desc">
+                            فريقنا جاهز للإجابة على جميع استفساراتك وتقديم الاستشارات التقنية المخصصة لمؤسستك.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-gray-100 shadow-sm">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-electric flex items-center justify-center">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500 font-bold">الموقع الرئيسي</div>
+                                <div class="text-sm font-bold text-brand-navy">الخرطوم - السودان</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-gray-100 shadow-sm">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-electric flex items-center justify-center">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500 font-bold">البريد الإلكتروني الرسمي</div>
+                                <div class="text-sm font-bold text-brand-navy font-english">info@alwarith.sd</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-gray-100 shadow-sm">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-electric flex items-center justify-center">
+                                <i data-lucide="phone" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500 font-bold">هاتف التواصل المباشر</div>
+                                <div class="text-sm font-bold text-brand-navy font-english" dir="ltr">+249 123 456 789</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-3xl border border-gray-200 shadow-xl">
+                    <form id="mainContactForm" onsubmit="submitContact(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1" data-i18n="form_name">الاسم الكامل</label>
+                            <input type="text" id="form_input_name" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-electric outline-none text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1" data-i18n="form_email">البريد الإلكتروني / رقم الهاتف</label>
+                            <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-electric outline-none text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1" data-i18n="form_msg">تفاصيل الرسالة أو المشروع</label>
+                            <textarea id="form_input_msg" rows="4" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-electric outline-none text-sm"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-electric hover:bg-blue-600 text-white font-bold text-sm transition shadow-lg shadow-blue-500/20">
+                            إرسال الطلب الآن
+                        </button>
+                    </form>
+                    <div id="contactAlert" class="hidden mt-4 p-4 rounded-xl bg-green-100 text-green-800 text-sm font-bold">
+                        شكراً لك! تم استلام رسالتك وسيتواصل معك موظف المبيعات قريباً.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-brand-navy text-white border-t border-white/10 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <svg viewBox="0 0 200 160" class="w-10 h-10">
+                            <rect x="10" y="65" width="16" height="16" rx="3" fill="#3BA3FF"/>
+                            <rect x="30" y="45" width="18" height="18" rx="3" fill="#3BA3FF"/>
+                            <rect x="30" y="67" width="22" height="22" rx="4" fill="#3BA3FF"/>
+                            <path d="M 60 110 L 100 35 L 122 75 L 105 105 Z" fill="#FFFFFF"/>
+                            <path d="M 100 35 L 140 110 L 120 110 L 100 70 Z" fill="#0E7BFF"/>
+                            <path d="M 115 65 L 150 120 L 180 35 L 158 35 L 140 85 Z" fill="#3BA3FF"/>
+                        </svg>
+                        <span class="text-lg font-bold font-english">AL WARITH</span>
+                    </div>
+                    <p class="text-xs text-gray-300 leading-relaxed" data-i18n="footer_desc">
+                        الوارث للحلول البرمجية - شركة سودانية متخصصة في بناء الأنظمة الرقمية الذكية والتطبيقات وتسهيل التحول الرقمي.
+                    </p>
+                </div>
+
+                <!-- Col 2: Fast Links -->
+                <div>
+                    <h4 class="text-sm font-bold mb-4 text-brand-sky" data-i18n="footer_links">روابط سريعة</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li><a href="#about" class="hover:text-white transition">التعريف بالشركة</a></li>
+                        <li><a href="#services" class="hover:text-white transition">خدماتنا التقنية</a></li>
+                        <li><a href="#products" class="hover:text-white transition">المنتجات والأنظمة</a></li>
+                        <li><a href="#calculator" class="hover:text-white transition">حاسبة الأسعار</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Legal & Brand Standards -->
+                <div>
+                    <h4 class="text-sm font-bold mb-4 text-brand-sky" data-i18n="footer_compliance">الهوية والمعايير</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li>دليل الهوية البصرية v1.0</li>
+                        <li>معايير التباين WCAG AA</li>
+                        <li>سياسة حماية البيانات</li>
+                        <li>اتفاقية مستوى الخدمة SLA</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Tagline -->
+                <div>
+                    <h4 class="text-sm font-bold mb-4 text-brand-sky" data-i18n="tagline_title">الشعار اللفظي</h4>
+                    <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-xs italic text-gray-300">
+                        "تقنية تبني المستقبل .. حلول ذكية لأعمال أكثر كفاءة"
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-white/10 text-center text-xs text-gray-400 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div>© 2026 AL WARITH Software Solutions. جميع الحقوق محفوظة.</div>
+                <div class="font-english text-[11px]">Designed in compliance with Brand Guidelines 1.0</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Language State (Default AR)
+        let currentLang = 'ar';
+
+        const translations = {
+            ar: {
+                nav_about: 'من نحن',
+                nav_services: 'الخدمات والحلول',
+                nav_products: 'الأنظمة والمنتجات',
+                nav_projects: 'المشاريع',
+                nav_calc: 'حاسبة المشروع',
+                nav_support: 'الدعم الفني',
+                nav_cta: 'تواصل معنا',
+                hero_badge: 'الشريك التقني الأول للتحول الرقمي بالسودان',
+                hero_title_1: 'تقنية تبني المستقبل ..',
+                hero_title_2: 'حلول برمجية ذكية لتنمية أعمالك',
+                hero_desc: 'نطور أنظمة وبرمجيات عالية الجودة مخصصة للمؤسسات والشركات. نساعدك على تبسيط العمليات المعقدة والتحول الرقمي بكفاءة عالية وبدعم فني مستمر.',
+                hero_btn_primary: 'ابدأ مشروعك الرقمي',
+                hero_btn_secondary: 'استكشف أنظمتنا',
+                metric_1: 'اعتمادية الأنظمة',
+                metric_2: 'دعم فني مستمر',
+                metric_3: 'كفاءات سودانية',
+                about_subtitle: 'التعريف بالعلامة التجارية',
+                about_title: 'الوارث للحلول البرمجية',
+                about_p: 'شريك تقني محلي يقدم حلولاً برمجية عملية ومرنة تراعي احتياجات السوق السوداني، وتجمع بين الجودة، سهولة الاستخدام، والدعم المستمر لتنظيم الأعمال ونموها.',
+                vision_title: 'الرؤية | Vision',
+                vision_desc: 'أن نكون الشريك التقني الأول والرواد في تمكين التحول الرقمي وبناء الأنظمة البرمجية الذكية في السودان والمحيط الإقليمي، من خلال تقديم حلول متطورة ترتقي بمستوى الأعمال وتصنع مستقبلاً رقمياً مستداماً.',
+                mission_title: 'الرسالة | Mission',
+                mission_desc: 'تقديم أنظمة وبرمجيات عالية الجودة، مخصصة ومبتكرة، تلبي تطلعات المؤسسات والشركات. نسعى لتبسيط العمليات المعقدة بأسعار تنافسية ودعم فني مستمر بالاعتماد على الكفاءات السودانية وأحدث التقنيات.',
+                values_title: 'القيم الأساسية | Core Values'
+            },
+            en: {
+                nav_about: 'About Us',
+                nav_services: 'Services & Solutions',
+                nav_products: 'Products & Systems',
+                nav_projects: 'Projects',
+                nav_calc: 'Calculator',
+                nav_support: 'Support',
+                nav_cta: 'Contact Us',
+                hero_badge: 'Leading Tech Partner for Digital Transformation',
+                hero_title_1: 'Technology That Builds the Future ..',
+                hero_title_2: 'Smart Software for Business Growth',
+                hero_desc: 'We build high-quality, customized software systems for Sudanese organizations. Simplifying operations with competitive solutions and continuous technical support.',
+                hero_btn_primary: 'Start Your Project',
+                hero_btn_secondary: 'Explore Systems',
+                metric_1: 'System Reliability',
+                metric_2: 'Continuous Support',
+                metric_3: 'Sudanese Talent',
+                about_subtitle: 'BRAND INTRODUCTION',
+                about_title: 'AL WARITH Software Solutions',
+                about_p: 'A local technology partner delivering reliable, adaptable, and practical software solutions designed specifically for Sudanese institutions.',
+                vision_title: 'Vision',
+                vision_desc: 'To become a leading technology partner in enabling digital transformation and building intelligent software systems in Sudan and the wider region.',
+                mission_title: 'Mission',
+                mission_desc: 'Delivering high-quality, customized, and innovative software solutions. We simplify complex operations through competitive technology and continuous support.',
+                values_title: 'Core Values'
+            }
+        };
+
+        // Toggle Language Functionality
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            
+            document.getElementById('langLabel').innerText = currentLang === 'ar' ? 'English' : 'العربية';
+
+            // Update Text Contents
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerText = translations[currentLang][key];
+                }
+            });
+        }
+
+        // Mobile Drawer Toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Tab Switcher Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-navy', 'text-white', 'shadow-md');
+                btn.classList.add('bg-gray-100', 'text-gray-600');
+            });
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+
+            const activeBtn = document.getElementById(`tab-${tabId}`);
+            activeBtn.classList.remove('bg-gray-100', 'text-gray-600');
+            activeBtn.classList.add('bg-brand-navy', 'text-white', 'shadow-md');
+
+            document.getElementById(`content-${tabId}`).classList.remove('hidden');
+        }
+
+        // Interactive Project Price Calculator
+        function calculateEstimate() {
+            let basePrice = 800;
+            let timeMin = 2;
+            let timeMax = 3;
+
+            const projectType = document.querySelector('input[name="project_type"]:checked').value;
+
+            if (projectType === 'mobile') {
+                basePrice = 1200;
+                timeMin = 3;
+                timeMax = 5;
+            } else if (projectType === 'erp') {
+                basePrice = 2000;
+                timeMin = 6;
+                timeMax = 10;
+            }
+
+            if (document.getElementById('feat_payment').checked) basePrice += 300;
+            if (document.getElementById('feat_multilang').checked) basePrice += 200;
+            if (document.getElementById('feat_dashboard').checked) basePrice += 400;
+            if (document.getElementById('feat_support').checked) basePrice += 250;
+
+            document.getElementById('estPrice').innerText = basePrice;
+            document.getElementById('estPriceMax').innerText = basePrice + Math.round(basePrice * 0.4);
+            document.getElementById('estTime').innerText = `${timeMin} - ${timeMax}`;
+        }
+
+        function fillProjectDetails() {
+            const price = document.getElementById('estPrice').innerText;
+            document.getElementById('form_input_msg').value = `استفسار بخصوص مشروع جديد بتقدير حاسبة الموقع ($${price}).`;
+        }
+
+        // Form Submission Notifications
+        function submitTicket(e) {
+            e.preventDefault();
+            document.getElementById('ticketAlert').classList.remove('hidden');
+            e.target.reset();
+        }
+
+        function submitContact(e) {
+            e.preventDefault();
+            document.getElementById('contactAlert').classList.remove('hidden');
+            e.target.reset();
+        }
+    </script>
+
+</body>
+</html>
